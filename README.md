@@ -36,6 +36,9 @@ forked from an existing repository provided by Coding Minds
 - https://www.pysimplegui.org/en/latest/
 
 ### EmailSender GUI
+
+Don't freak out, that's not even 1/3 of the API key lol.
+
 ![Screenshot of EmailSender](imgs/EmailSender.png)
 
 ### EmailReeceiver GUI
