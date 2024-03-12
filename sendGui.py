@@ -72,6 +72,7 @@ email_subject = ""
 email_html = ""
 DOMAIN_NAME = ""
 API_KEY = ""
+check = False
 
 # Create the window
 window = sg.Window("Email Sender", layout)
@@ -102,9 +103,10 @@ while True:
             and f.lower().endswith((".csv"))
         ]
         window["-FILE_LIST-"].update(fnames)
+        check = True
 
     # FILE_LIST event triggered, update list with filenames in 'values'
-    elif event == "-FILE_LIST-":  # A file was chosen from the listbox
+    elif event == "-FILE_LIST-" and check:  # A file was chosen from the listbox
         csv_file_name =  values["-FILE_LIST-"][0]
 
     elif event == "-SUBJECT-":
