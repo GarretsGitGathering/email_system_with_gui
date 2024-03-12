@@ -55,6 +55,7 @@ window = sg.Window("Email Reciever", layout)
 filename = ""
 past_timestamp = 0
 time_back = 0
+check = False
 
 while True:
     event, values = window.read()
@@ -83,9 +84,10 @@ while True:
             and f.lower().endswith((".json"))
         ]
         window["-FILE LIST-"].update(fnames)
+        check = True
 
     # File List event triggered, update list with filenames in 'values'
-    elif event == "-FILE LIST-":  # A file was chosen from the listbox
+    elif event == "-FILE LIST-" and check:  # A file was chosen from the listbox
         filename = os.path.join(
             values["-FOLDER-"], values["-FILE LIST-"][0]        # THIS IS WHAT WE WANT TO PASS TO getEmails
         )
